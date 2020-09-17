@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface RecordRepository extends JpaRepository<Record, Long>{
-
+//coalesce para ser aceito on posgresql a consulta
 	@Query("SELECT obj FROM Record obj WHERE "
 			+ "(coalesce(:min,null) IS NULL OR obj.moment >= :min) AND "
 			+ "(coalesce(:max,null) IS NULL OR obj.moment <= :max)")
