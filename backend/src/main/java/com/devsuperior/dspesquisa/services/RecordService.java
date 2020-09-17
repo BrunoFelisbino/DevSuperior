@@ -1,19 +1,19 @@
-package com.devsuperior.devpesquisa.services;
+package com.devsuperior.dspesquisa.services;
 
 import java.time.Instant;
-
-import com.devsuperior.devpesquisa.dto.RecordDTO;
-import com.devsuperior.devpesquisa.dto.RecordInsertDTO;
-import com.devsuperior.devpesquisa.entities.Game;
-import com.devsuperior.devpesquisa.entities.Record;
-import com.devsuperior.devpesquisa.repositories.GameRepository;
-import com.devsuperior.devpesquisa.repositories.RecordRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+ 
+import com.devsuperior.dspesquisa.dto.RecordDTO;
+import com.devsuperior.dspesquisa.dto.RecordInsertDTO;
+import com.devsuperior.dspesquisa.entities.Game;
+import com.devsuperior.dspesquisa.entities.Record;
+import com.devsuperior.dspesquisa.repositories.GameRepository;
+import com.devsuperior.dspesquisa.repositories.RecordRepository;
 
 @Service
 public class RecordService {
@@ -42,6 +42,5 @@ public class RecordService {
 	public Page<RecordDTO> findByMoments(Instant minDate, Instant maxDate, PageRequest pageRequest) {
 		 
 		return repository.findByMoments(minDate,maxDate,pageRequest).map( x -> new RecordDTO(x));
-	
-    }
+	}
 }

@@ -1,5 +1,5 @@
-package com.devsuperior.devpesquisa.dto;
- 
+package com.devsuperior.dspesquisa.dto;
+
 import java.io.Serializable;
 
 public class RecordInsertDTO implements Serializable {
