@@ -13,12 +13,9 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "tb_record")
-public class Record implements Serializable{
-
-    /**
-     *
-     */
+public class Record implements Serializable {
     private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -30,12 +27,12 @@ public class Record implements Serializable{
     @JoinColumn(name = "game_id")
     private Game game;
 
-    
-
     public Record() {
+
     }
 
     public Record(Long id, String name, Integer age, Instant moment, Game game) {
+        super();
         this.id = id;
         this.name = name;
         this.age = age;
@@ -108,5 +105,4 @@ public class Record implements Serializable{
         return true;
     }
 
-    
 }
